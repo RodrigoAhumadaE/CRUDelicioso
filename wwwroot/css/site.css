@@ -1,0 +1,65 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+/* agregado */
+
+.formulario{
+  width: 100%;
+  display: flex;
+}
+
+.izq, .der{
+  flex: 2;
+  margin: 0 15px;
+}
+
+.cen{
+  flex: 1;
+}
+
+.item{
+  display: flex;
+  flex-direction: column;
+}
+
+.item label{
+  margin: 10px 0;
+}
+
+.item span{
+  color: #757575;
+}
+
+.boton{
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.nav-item a{
+  list-style: none;
+}
+
+.tarjeta{
+  width: 60%;
+}
+
+.descripcion{
+  text-align: justify;
+}

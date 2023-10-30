@@ -1,0 +1,24 @@
+@{
+    ViewData["Title"] = "Detalle";
+}
+@model Plato
+<div class="text-center">
+    <h2 class="display-4">@Model.Nombre</h2>
+</div>
+@await Html.PartialAsync("_Navbar")
+<div class="tarjeta d-flex flex-column justify-content-center">
+    <h4 class="text-decoration-underline">@Model.Nombre by @Model.Chef</h4>
+    <div class="my-4">
+        <h5 class="descripcion">@Model.Descripcion</h5>
+    </div>
+    <h5>Calorias: @Model.Calorias</h5>
+    <h5>Sabor: @Model.Sabor</h5>
+    <div class="d-flex justify-content-around my-4">
+        <a asp-controller="Home" asp-action="EliminarPlato" asp-route-PlatoId="@Model.PlatoId">
+            <button class="btn btn-danger btn-sm">Borrar</button>
+        </a>
+        <a asp-controller="Home" asp-action="EditarPlato" asp-route-PlatoId="@Model.PlatoId">
+            <button class="btn btn-warning btn-sm">Editar</button>
+        </a>
+    </div>
+</div>

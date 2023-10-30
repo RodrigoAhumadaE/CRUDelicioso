@@ -1,0 +1,49 @@
+@{
+    ViewData["Title"] = "Editar Plato";
+    int[] valorSabor = new int[]{1,2,3,4,5};
+}
+@model Plato
+<div class="text-center">
+   <h1 class="display-4">Agrega un nuevo Plato!</h1> 
+</div>
+@await Html.PartialAsync("_Navbar")
+<form class="formulario" asp-controller="Home" asp-action="AgregarPlato">
+    <div class="izq">
+        <div class="item">
+            <label asp-for="Chef">Nombre del Chef</label>
+            <input type="text" asp-for="Chef">
+            <span asp-validation-for="Chef"></span>
+        </div>
+        <div class="item">
+            <label asp-for="Nombre">Nombre del Plato</label>
+            <input type="text" asp-for="Nombre">
+            <span asp-validation-for="Nombre"></span>
+        </div>
+        <div class="item">
+            <label asp-for="Calorias"># de Calorias</label>
+            <input type="number" asp-for="Calorias">
+            <span asp-validation-for="Calorias"></span>
+        </div>
+    </div>
+    <div class="cen">
+        <div class="item">
+            <label asp-for="Sabor">Sabor</label>
+            <select asp-for="Sabor">
+                @foreach(int valor in valorSabor){
+                    <option value="@valor">@valor</option>
+                }
+            </select>
+            <span asp-validation-for="Sabor"></span>
+        </div>
+    </div>
+    <div class="der">
+        <div class="item">
+            <label asp-for="Descripcion">Descripción</label>
+            <textarea asp-for="Descripcion" rows="5"></textarea>
+            <span asp-validation-for="Descripcion"></span>
+        </div>
+        <div class="boton">
+            <button class="btn btn-primary">Agregar Plato</button>
+        </div>
+    </div>
+</form>
